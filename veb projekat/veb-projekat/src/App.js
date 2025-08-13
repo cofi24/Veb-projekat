@@ -6,6 +6,10 @@ import AdminPage from "./Admin/AdminPage";
 import UserPage from "./User/UserPage";
 import LoginPage from "./Login/LoginPage";
 import RegisterPage from "./Register/RegisterPage";
+import UserResultsPage from "./User/UserResultsPage";
+import LeaderboardPage from "./User/LeaderboardPage";
+import QuizSolvePage from "./User/QuizSolvePage";
+
 
 function ProtectedRoute({ children }) {
   const { token } = useAuth();
@@ -29,6 +33,8 @@ function App() {
         <Link to="/user">User</Link>
         <Link to="/register">Register</Link>
         <Link to="/login">Login</Link>
+        <Link to="/user/results">Moji rezultati</Link>
+        <Link to="/leaderboard">Rang lista</Link>
         
       </nav>
 
@@ -39,6 +45,10 @@ function App() {
         <Route path="/user" element={<ProtectedRoute><UserPage/></ProtectedRoute>}/>
         <Route path="/register" element={<RegisterPage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/user/results" element={<ProtectedRoute><UserResultsPage/></ProtectedRoute>} />
+        <Route path="/leaderboard" element={<LeaderboardPage/>} />
+        <Route path="/quiz/:id/solve" element={<ProtectedRoute><QuizSolvePage/></ProtectedRoute>} />
+        
       </Routes>
     </div>
   );
