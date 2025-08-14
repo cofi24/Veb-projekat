@@ -9,6 +9,7 @@ import RegisterPage from "./Register/RegisterPage";
 import UserResultsPage from "./User/UserResultsPage";
 import LeaderboardPage from "./User/LeaderboardPage";
 import QuizSolvePage from "./User/QuizSolvePage";
+import QuizResultDetails from "./User/QuizResultDetails";
 
 
 function ProtectedRoute({ children }) {
@@ -48,7 +49,9 @@ function App() {
         <Route path="/user/results" element={<ProtectedRoute><UserResultsPage/></ProtectedRoute>} />
         <Route path="/leaderboard" element={<LeaderboardPage/>} />
         <Route path="/quiz/:id/solve" element={<ProtectedRoute><QuizSolvePage/></ProtectedRoute>} />
-        
+        <Route path="/results/:id"  element={<ProtectedRoute><QuizResultDetails/></ProtectedRoute>}
+/>
+
       </Routes>
     </div>
   );
