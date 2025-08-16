@@ -36,36 +36,82 @@ function LoginPage() {
 };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "50px auto" }}>
-      <h2>Prijava</h2>
+  <div style={{ 
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "linear-gradient(135deg, #e5e7eb, #9ca3af)" /* siva pozadina sa blagim prelazom */
+  }}>
+    <div style={{
+      maxWidth: "400px",
+      width: "100%",
+      background: "#fff",        /* bela kartica */
+      padding: "30px",
+      borderRadius: "12px",      /* zaobljeni uglovi */
+      boxShadow: "0 8px 24px rgba(0,0,0,0.15)" /* senka */
+    }}>
+      <h2 style={{ textAlign: "center", marginBottom: "20px", color: "#111827" }}>Prijava</h2>
+      
       <form onSubmit={handleLogin}>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Korisničko ime:</label><br />
+        <div style={{ marginBottom: "15px" }}>
+          <label style={{ fontWeight: "600", color: "#374151" }}>Korisničko ime:</label><br />
           <input
             type="text"
             value={usernameOrEmail}
             onChange={(e) => setUsernameOrEmail(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px" }}
+            style={{ 
+              width: "95%", 
+              padding: "10px", 
+              border: "1px solid #d1d5db", 
+              borderRadius: "8px",
+              outline: "none",
+              marginTop: "5px"
+            }}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Lozinka:</label><br />
+
+        <div style={{ marginBottom: "15px" }}>
+          <label style={{ fontWeight: "600", color: "#374151" }}>Lozinka:</label><br />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px" }}
+            style={{ 
+              width: "95%", 
+              padding: "10px", 
+              border: "1px solid #d1d5db", 
+              borderRadius: "8px",
+              outline: "none",
+              marginTop: "5px"
+            }}
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit" style={{ padding: "10px 20px" }}>
+
+        {error && <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>}
+
+        <button 
+          type="submit" 
+          style={{ 
+            width: "100%",
+            padding: "12px",
+            background: "#3b82f6",      /* plava */
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            fontWeight: "600",
+            cursor: "pointer"
+          }}
+        >
           Prijavi se
         </button>
       </form>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default LoginPage;

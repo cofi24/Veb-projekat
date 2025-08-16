@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const API_BASE = "https://localhost:7178";
 
 export default function UserPage() {
-  const { token } = useAuth();
+  const { token, logout} = useAuth();
+  const navigate = useNavigate();
   const [quizzes, setQuizzes] = useState([]);
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
@@ -50,8 +51,13 @@ export default function UserPage() {
   }, [category, difficulty, debouncedSearch]);
 
   return (
-    <div style={{ maxWidth: 900, margin: "30px auto", padding: "0 16px" }}>
-      <h2>Dostupni kvizovi</h2>
+    <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 16px" }}>
+       {/* Header sa logout dugmetom */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h2>Dostupni kvizovi</h2>
+       
+      </div>
+      
 
       {/* Filteri */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 2fr auto", gap: 12, margin: "16px 0" }}>
@@ -107,9 +113,7 @@ function QuizCard({ quiz }) {
       </div>
 
       <div style={{ display: "flex", gap: 8 }}>
-        <Link to={`/Quiz/${quiz.id}`}>
-          <button style={{ padding: "8px 12px" }}>Detalji</button>
-        </Link>
+        
 
         <Link to={`/Quiz/${quiz.id}/solve`}>
           <button style={{ padding: "8px 12px", backgroundColor: "#4CAF50", color: "#fff" }}>

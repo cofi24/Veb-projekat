@@ -1,8 +1,7 @@
 // src/Leaderboard/LeaderboardPage.jsx
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../AuthContext";
-import { Link } from "react-router-dom";
 
 const API = "https://localhost:7178";
 
@@ -19,12 +18,11 @@ export default function LeaderboardPage() {
     const loadQuizzes = async () => {
       try {
         const res = await axios.get(`${API}/api/quiz`, {
-          // AllowAnonymous u tvom kontroleru – može i bez tokena
           headers: { Authorization: `Bearer ${token}` }
         });
         setQuizzes(res.data || []);
-      } catch (e) {
-        // ignore ili setErr
+      } catch {
+        // ignoriši ili setErr
       }
     };
     loadQuizzes();
@@ -41,7 +39,6 @@ export default function LeaderboardPage() {
 
         const res = await axios.get(`${API}/api/Quiz/leaderboard`, {
           params,
-          // ako si ostavio AllowAnonymous, može i bez hedera
           headers: { Authorization: `Bearer ${token}` }
         });
         setEntries(res.data || []);
@@ -52,15 +49,39 @@ export default function LeaderboardPage() {
     load();
   }, [quizId, period, token]);
 
+  // helper za formatiranje datuma (radi sa ISO stringom ili timestampom)
+  const formatWhen = (v) => {
+    if (!v) return "-";
+    const ms = typeof v === "number" ? (v < 1e12 ? v * 1000 : v) : Date.parse(v);
+    if (Number.isNaN(ms)) return "-";
+    return new Date(ms).toLocaleString();
+  };
+
+  // sortiraj: prvo totalScore desc, pa vrijeme asc (ranije je bolje)
+  const sortedEntries = useMemo(() => {
+    return [...entries].sort((a, b) => {
+      const scoreDiff = (b.totalScore ?? 0) - (a.totalScore ?? 0);
+      if (scoreDiff !== 0) return scoreDiff;
+      const ta = a.achievedAt ?? a.completedAt ?? null;
+      const tb = b.achievedAt ?? b.completedAt ?? null;
+      if (!ta && !tb) return 0;
+      if (!ta) return 1;
+      if (!tb) return -1;
+      const da = typeof ta === "number" ? (ta < 1e12 ? ta * 1000 : ta) : Date.parse(ta);
+      const db = typeof tb === "number" ? (tb < 1e12 ? tb * 1000 : tb) : Date.parse(tb);
+      return da - db;
+    });
+  }, [entries]);
+
   return (
     <div style={{ maxWidth: 900, margin: "30px auto", padding: 16 }}>
       <h2>Globalna rang lista</h2>
 
       {/* filteri */}
-      <div style={{ display: "flex", gap: 12, margin: "16px 0" }}>
+      <div style={{ display: "flex", gap: 12, margin: "16px 0", flexWrap: "wrap" }}>
         <select value={quizId} onChange={(e) => setQuizId(e.target.value)} style={{ padding: 8 }}>
           <option value="">Svi kvizovi</option>
-          {quizzes.map(q => (
+          {quizzes.map((q) => (
             <option key={q.id} value={q.id}>{q.title}</option>
           ))}
         </select>
@@ -77,31 +98,28 @@ export default function LeaderboardPage() {
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
-            <th style={th}>Poz.</th>
+            <th style={th}>Pozicija</th>
             <th style={th}>Korisnik</th>
             <th style={th}>Ukupno bodova</th>
-            <th style={th}>Akcija</th>
+            <th style={th}>Vrijeme postizanja</th>
           </tr>
         </thead>
         <tbody>
-          {entries.map((e, i) => (
-            <tr key={e.username + i} style={user?.username === e.username ? { background: "#f6fff3" } : {}}>
-              <td style={td}>{i + 1}</td>
-              <td style={td}>{e.username}</td>
-              <td style={td}>{e.totalScore}</td>
-              <td style={td}>
-                {/* ako je filtrirano po jednom kvizu, ponudimo Start dugme */}
-                {quizId ? (
-                  <Link to={`/quiz/${quizId}/solve`}>
-                    <button>Start</button>
-                  </Link>
-                ) : (
-                  <span style={{ color: "#888" }}>Odaberi kviz da startuješ</span>
-                )}
-              </td>
-            </tr>
-          ))}
-          {!entries.length && (
+          {sortedEntries.map((e, i) => {
+            const when = e.achievedAt ?? e.completedAt; // backend polje
+            return (
+              <tr
+                key={e.username + i}
+                style={user?.username === e.username ? { background: "#f6fff3" } : {}}
+              >
+                <td style={td}>{i + 1}</td>
+                <td style={td}>{e.username}</td>
+                <td style={td}>{e.totalScore}</td>
+                <td style={td} title={String(when ?? "")}>{formatWhen(when)}</td>
+              </tr>
+            );
+          })}
+          {!sortedEntries.length && (
             <tr><td colSpan={4} style={td}>Nema rezultata.</td></tr>
           )}
         </tbody>

@@ -1,6 +1,7 @@
-import { Routes,Route,Link,Navigate} from "react-router-dom";
+import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 import HomePage from "./Home/HomePage";
 import AdminPage from "./Admin/AdminPage";
 import UserPage from "./User/UserPage";
@@ -10,12 +11,15 @@ import UserResultsPage from "./User/UserResultsPage";
 import LeaderboardPage from "./User/LeaderboardPage";
 import QuizSolvePage from "./User/QuizSolvePage";
 import QuizResultDetails from "./User/QuizResultDetails";
-
+import ConfirmModal from "./Confirm/ConfirmModal";
+import AdminQuizResultsPage from "./Admin/AdminQuizResultsPage";
+import AdminAllQuizResultsPage from "./Admin/AdminAllQuizResultsPage";
 
 function ProtectedRoute({ children }) {
   const { token } = useAuth();
   return token ? children : <Navigate to="/login" replace />;
 }
+
 function AdminRoute({ children }) {
   const { user, token } = useAuth();
   if (!token) return <Navigate to="/login" replace />;
@@ -23,38 +27,88 @@ function AdminRoute({ children }) {
   return children;
 }
 
+export default function App() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
-function App() {
+  const confirmLogout = () => {
+  logout();
+  setShowLogoutModal(false);
+  navigate("/login", { replace: true });
+
+};
+
+
   return (
     <div>
-      {/* Navigacija */}
-      <nav style={{ display: "flex", gap: "1rem", marginBottom: "20px" }}>
-        <Link to="/">HomePage</Link>
-        <Link to="/admin">AdminPage </Link>
-        <Link to="/user">User</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/user/results">Moji rezultati</Link>
-        <Link to="/leaderboard">Rang lista</Link>
-        
+      <nav>
+        <div className="nav-links">
+        <Link to="/">Login</Link>
+
+        {!user && (
+          <>
+            <Link to="/register">Register</Link>
+            
+          </>
+        )}
+
+        {user?.role === "admin" && (
+          <>
+            <Link to="/admin">Quiz</Link>
+            <Link to="/leaderboard">Rang lista</Link>
+            
+            <Link to="/admin/results">Rezultati</Link>
+            <button
+              className="logout-link"
+              onClick={() => setShowLogoutModal(true)}
+            >
+              Logout
+            </button>
+          </>
+        )}
+
+        {user?.role === "user" && (
+          <>
+            <Link to="/user">Quiz</Link>
+            <Link to="/user/results">Moji rezultati</Link>
+            <Link to="/leaderboard">Rang lista</Link>
+            <button
+              className="logout-link"
+              onClick={() => setShowLogoutModal(true)}
+            >
+              Logout
+            </button>
+          </>
+          
+        )}
+        </div>
       </nav>
 
       {/* Rute */}
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<AdminRoute><AdminPage/></AdminRoute>}/>
-        <Route path="/user" element={<ProtectedRoute><UserPage/></ProtectedRoute>}/>
-        <Route path="/register" element={<RegisterPage/>}/>
-        <Route path="/login" element={<LoginPage/>}/>
-        <Route path="/user/results" element={<ProtectedRoute><UserResultsPage/></ProtectedRoute>} />
-        <Route path="/leaderboard" element={<LeaderboardPage/>} />
-        <Route path="/quiz/:id/solve" element={<ProtectedRoute><QuizSolvePage/></ProtectedRoute>} />
-        <Route path="/results/:id"  element={<ProtectedRoute><QuizResultDetails/></ProtectedRoute>}
-/>
-
+        
+        <Route path="/admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
+        <Route path="/user" element={<ProtectedRoute><UserPage /></ProtectedRoute>} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        
+        <Route path="/admin/results" element={<AdminRoute><AdminAllQuizResultsPage/></AdminRoute>} />
+        <Route path="/user/results" element={<ProtectedRoute><UserResultsPage /></ProtectedRoute>} />
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
+        <Route path="/quiz/:id/solve" element={<ProtectedRoute><QuizSolvePage /></ProtectedRoute>} />
+        <Route path="/results/:id" element={<ProtectedRoute><QuizResultDetails /></ProtectedRoute>} />
       </Routes>
+
+      {/* Modal */}
+      <ConfirmModal
+        open={showLogoutModal}
+        title="Potvrda odjave"
+        message="Da li ste sigurni da želite da se odjavite?"
+        onConfirm={confirmLogout}
+        onCancel={() => setShowLogoutModal(false)}
+      />
     </div>
   );
 }
-
-export default App;

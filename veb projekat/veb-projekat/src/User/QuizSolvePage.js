@@ -151,7 +151,7 @@ export default function QuizSolvePage() {
   if (!quiz || !quiz.questions) return <div>Greška: Kviz nije učitan</div>;
 
   return (
-    <div style={{ maxWidth: 900, margin: "30px auto", padding: 16 }}>
+    <div style={{ maxWidth: 900, margin: "50px auto", padding: 16 }}>
       <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
         <div>
           <h2 style={{ margin: 0 }}>{quiz.title}</h2>
