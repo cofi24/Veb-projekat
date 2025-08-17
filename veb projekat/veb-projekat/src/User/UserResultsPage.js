@@ -53,7 +53,18 @@ export default function UserResultsPage() {
                 <td style={td}>
                   {resultId ? (
                     <Link to={`/results/${resultId}`}>
-                      <button>Detalji</button>
+                      <button style={{
+                          padding: "8px 16px",
+                          backgroundColor: "#2563eb",
+                          color: "white",
+                          fontWeight: "600",
+                          border: "none",
+                          borderRadius: "8px",
+                          cursor: "pointer"
+                        }}
+                        onMouseOver={(e) => (e.target.style.backgroundColor = "#1d4ed8")}
+                        onMouseOut={(e) => (e.target.style.backgroundColor = "#2563eb")}>
+                          Detalji</button>
                     </Link>
                   ) : (
                     <button disabled title="Nedostaje ID rezultata">Detalji</button>

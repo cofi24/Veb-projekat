@@ -4,7 +4,26 @@ import axios from "axios";
 import { useAuth } from "../AuthContext";
 
 const API = "https://localhost:7178";
+const AVATAR_SIZE = 52;
 
+const getInitials = (name) =>
+  (name ?? "")
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map(s => s[0]?.toUpperCase() || "")
+    .join("") || "?";
+
+const svgAvatarDataUrl = (name) => {
+  const initials = getInitials(name);
+  const svg = `
+    <svg xmlns='http://www.w3.org/2000/svg' width='${AVATAR_SIZE}' height='${AVATAR_SIZE}'>
+      <rect width='100%' height='100%' fill='%23e5e7eb'/>
+      <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
+            font-family='Arial' font-size='14' fill='%23333'>${initials}</text>
+    </svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+};
 export default function LeaderboardPage() {
   const { token, user } = useAuth();
   const [quizId, setQuizId] = useState("");
@@ -113,7 +132,19 @@ export default function LeaderboardPage() {
                 style={user?.username === e.username ? { background: "#f6fff3" } : {}}
               >
                 <td style={td}>{i + 1}</td>
-                <td style={td}>{e.username}</td>
+                <td style={td}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <img
+                      src={e.profilePictureDataUrl || svgAvatarDataUrl(e.username)} // ← prvo proba fotku iz backa
+                      alt={e.username}
+                      width={AVATAR_SIZE}
+                      height={AVATAR_SIZE}
+                      style={{ borderRadius: "50%", objectFit: "cover", flex: "0 0 auto" }}
+                    />
+                    <span>{e.username}</span>
+                  </div>
+                </td>
+
                 <td style={td}>{e.totalScore}</td>
                 <td style={td} title={String(when ?? "")}>{formatWhen(when)}</td>
               </tr>

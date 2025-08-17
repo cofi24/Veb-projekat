@@ -45,17 +45,17 @@ function QuizMetaForm({ initial, onSubmit, onCancel }) {
     <form onSubmit={(e) => { e.preventDefault(); onSubmit({ title, description, category, difficulty, timeLimitSeconds: Number(timeLimitSeconds) }); }}>
       <div style={{ display: "grid", gap: 10 }}>
         <label>Naslov
-          <input value={title} onChange={(e) => setTitle(e.target.value)} required style={{ width: "100%", padding: 8 }} />
+          <input value={title} onChange={(e) => setTitle(e.target.value)} required style={{ width: "97%", padding: 8 }} />
         </label>
         <label>Opis
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} style={{ width: "100%", padding: 8 }} />
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} style={{ width: "97%", padding: 8 }} />
         </label>
         <Row>
           <label style={{ flex: 1 }}>Kategorija
-            <input value={category} onChange={(e) => setCategory(e.target.value)} style={{ width: "100%", padding: 8 }} />
+            <input value={category} onChange={(e) => setCategory(e.target.value)} style={{ width: "90%", padding: 8 }} />
           </label>
           <label style={{ flex: 1 }}>Težina
-            <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)} style={{ width: "100%", padding: 8 }}>
+            <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)} style={{ width: "97%", padding: 8 }}>
               <option value="">(odaberi)</option>
               <option value="lako">lako</option>
               <option value="srednje">srednje</option>
@@ -63,7 +63,7 @@ function QuizMetaForm({ initial, onSubmit, onCancel }) {
             </select>
           </label>
           <label style={{ width: 180 }}>Limit (sek)
-            <input type="number" min={10} value={timeLimitSeconds} onChange={(e) => setTimeLimitSeconds(e.target.value)} style={{ width: "100%", padding: 8 }} />
+            <input type="number" min={10} value={timeLimitSeconds} onChange={(e) => setTimeLimitSeconds(e.target.value)} style={{ width: "90%", padding: 8 }} />
           </label>
         </Row>
       </div>
@@ -505,7 +505,7 @@ export default function AdminPage() {
 
   /** ============ Render ============ */
   return (
-    <div style={{ maxWidth: 1100, margin: "30px auto", padding: "0 16px" }}>
+    <div style={{ maxWidth: 1100, margin: "50px auto", padding: "0 16px" }}>
       {/* Header sa logoutom */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <h2>Admin – Upravljanje kvizovima</h2>
@@ -515,7 +515,7 @@ export default function AdminPage() {
      
 
       {/* Kontrole */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 2fr auto auto", gap: 12, margin: "16px 0" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 2fr auto auto", gap: 12, margin: "20px 0" }}>
         <input
           placeholder="Kategorija"
           value={category}

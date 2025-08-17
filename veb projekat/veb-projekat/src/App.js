@@ -12,7 +12,7 @@ import LeaderboardPage from "./User/LeaderboardPage";
 import QuizSolvePage from "./User/QuizSolvePage";
 import QuizResultDetails from "./User/QuizResultDetails";
 import ConfirmModal from "./Confirm/ConfirmModal";
-import AdminQuizResultsPage from "./Admin/AdminQuizResultsPage";
+
 import AdminAllQuizResultsPage from "./Admin/AdminAllQuizResultsPage";
 
 function ProtectedRoute({ children }) {
