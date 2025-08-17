@@ -1,0 +1,6 @@
+@VebQuiz_HostAddress = http://localhost:5033
+
+GET {{VebQuiz_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
