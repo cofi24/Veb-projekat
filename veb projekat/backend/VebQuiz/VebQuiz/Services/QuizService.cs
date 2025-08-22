@@ -190,5 +190,218 @@ namespace VebQuiz.Services
                 CompletedAt = r.CompletedAt
             }).ToList();
         }
+
+
+
+        public async Task<List<QuizDTO>> FilterQuizzesAsync(string? category, string? difficulty, string? search)
+        {
+            var query = _context.Quizzes
+                .Include(q => q.Questions)
+                    .ThenInclude(q => q.Answers)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(category))
+                query = query.Where(q => q.Category.ToLower().Contains(category.ToLower()));
+
+            if (!string.IsNullOrEmpty(difficulty))
+                query = query.Where(q => q.Difficulty.ToLower() == difficulty.ToLower());
+
+            if (!string.IsNullOrEmpty(search))
+                query = query.Where(q =>
+                    q.Title.ToLower().Contains(search.ToLower()) ||
+                    q.Description.ToLower().Contains(search.ToLower()));
+
+            var filteredQuizzes = await query.ToListAsync();
+
+            return _mapper.Map<List<QuizDTO>>(filteredQuizzes);
+        }
+
+        public async Task<List<LeaderboardEntryDTO>> GetLeaderboardAsync(int? quizId, string? period)
+        {
+            var query = _context.QuizResults
+                .AsNoTracking()
+                .Include(r => r.User) // da dobijemo Username
+                .AsQueryable();
+
+            if (quizId.HasValue)
+                query = query.Where(q => q.QuizId == quizId.Value);
+
+            var nowUtc = DateTime.UtcNow;
+            switch (period?.Trim().ToLowerInvariant())
+            {
+                case "daily":
+                    query = query.Where(q => q.CompletedAt >= nowUtc.Date);
+                    break;
+                case "monthly":
+                    var monthStartUtc = new DateTime(nowUtc.Year, nowUtc.Month, 1, 0, 0, 0, DateTimeKind.Utc);
+                    query = query.Where(q => q.CompletedAt >= monthStartUtc);
+                    break;
+            }
+
+            // 1) Agregati (MATERIJALIZUJ pre base64)
+            var aggregates = await query
+                .GroupBy(x => new { x.UserId, x.User.Username })
+                .Select(g => new
+                {
+                    g.Key.UserId,
+                    g.Key.Username,
+                    TotalScore = g.Sum(x => x.Score),
+                    AchievedAt = g.Max(x => x.CompletedAt)
+                })
+                .ToListAsync();
+
+            if (aggregates.Count == 0)
+                return new List<LeaderboardEntryDTO>();
+
+            // 2) Slike za te korisnike
+            var userIds = aggregates.Select(a => a.UserId).Distinct().ToList();
+
+            var photos = await _context.Users
+                .AsNoTracking()
+                .Where(u => userIds.Contains(u.Id))
+                .Select(u => new
+                {
+                    u.Id,
+                    u.ProfilePictureData,
+                    u.ProfilePictureContentType
+                })
+                .ToListAsync();
+
+            var photoMap = photos.ToDictionary(p => p.Id, p => p);
+
+            // 3) Sastavi DTO + data-URL (fallback na SVG inicijale po želji)
+            var result = aggregates
+                .Select(a =>
+                {
+                    photoMap.TryGetValue(a.UserId, out var p);
+                    string? dataUrl = null;
+
+                    if (p?.ProfilePictureData != null && p.ProfilePictureData.Length > 0)
+                    {
+                        var ct = string.IsNullOrWhiteSpace(p.ProfilePictureContentType)
+                            ? "image/png"
+                            : p.ProfilePictureContentType!;
+                        var b64 = Convert.ToBase64String(p.ProfilePictureData);
+                        dataUrl = $"data:{ct};base64,{b64}";
+                    }
+                    // else: ostavi null, ili ubaci fallback SVG ako želiš da front UVEK dobije nešto
+
+                    return new LeaderboardEntryDTO
+                    {
+                        UserId = a.UserId,
+                        Username = a.Username,
+                        TotalScore = a.TotalScore,
+                        AchievedAt = a.AchievedAt,
+                        ProfilePictureDataUrl = dataUrl
+                    };
+                })
+                .OrderByDescending(x => x.TotalScore)
+                .ThenBy(x => x.AchievedAt)
+                .ThenBy(x => x.Username)
+                .ToList();
+
+            return result;
+        }
+
+
+
+
+
+
+        public async Task<List<QuizUserResultDTO>> GetUserResultsAsync(string username)
+        {
+            return await _context.QuizResults
+         .AsNoTracking()
+         .Where(r => r.User.Username == username)
+         .OrderByDescending(r => r.CompletedAt)
+         .Select(r => new QuizUserResultDTO
+         {
+             QuizResultId = r.Id,                            // ✅ bitno za front
+             QuizTitle = r.Quiz.Title,
+             Score = r.Score,
+             TotalQuestions = r.TotalQuestions,
+             Percentage = Math.Round((double)r.Score * 100.0 / (r.TotalQuestions == 0 ? 1 : r.TotalQuestions), 2),
+             DurationSeconds = r.DurationSeconds,
+             CompletedAt = r.CompletedAt
+         })
+         .ToListAsync();
+        }
+
+
+
+        public async Task<QuizResultDetailsDto?> GetUserQuizResultAsync(int quizResultId, string username)
+        {
+            var result = await _context.QuizResults
+                .Include(r => r.Quiz)
+                .Include(r => r.UserAnswers)
+                    .ThenInclude(ua => ua.Question)
+                        .ThenInclude(q => q.Answers)
+                .Where(r => r.Id == quizResultId && r.User.Username == username)
+                .FirstOrDefaultAsync();
+
+            if (result == null)
+                return null;
+
+            // Svi pokušaji istog korisnika za isti kviz (za grafikon)
+            var attempts = await _context.QuizResults
+                .Where(r => r.UserId == result.UserId && r.QuizId == result.QuizId)
+                .OrderBy(r => r.CompletedAt)
+                .Select(r => new QuizResultAttemptDto
+                {
+                    QuizResultId = r.Id,
+                    CompletedAt = r.CompletedAt,
+                    Score = r.Score,
+                    TotalQuestions = r.TotalQuestions,
+                    DurationSeconds = r.DurationSeconds,
+                    Percentage = Math.Round(100.0 * (double)r.Score / Math.Max(1, r.TotalQuestions), 2)
+                })
+                .ToListAsync();
+
+            var dto = new QuizResultDetailsDto
+            {
+                QuizResultId = result.Id,
+                QuizTitle = result.Quiz.Title,
+                Score = result.Score,
+                TotalQuestions = result.TotalQuestions,
+                DurationSeconds = result.DurationSeconds, // ako je int?, može: result.DurationSeconds ?? 0
+                StartedAt = result.StartedAt,
+                CompletedAt = result.CompletedAt,
+
+                Answers = result.UserAnswers.Select(ua => new QuizUserAnswerDto
+                {
+                    QuestionId = ua.QuestionId,
+                    QuestionText = ua.Question.Text,
+                    Type = ua.Question.Type,
+
+                    // ⬇️ Izvuci tekstove iz odgovarajućih Answer entiteta
+                    UserSelectedAnswers = ua.Question.Answers
+                        .Where(a => ua.SelectedAnswerIds.Contains(a.Id))
+                        .Select(a => a.Text)
+                        .ToList(),
+
+                    FreeTextAnswer = ua.FreeTextAnswer,
+
+                    CorrectAnswers = ua.Question.Answers
+                        .Where(a => a.IsCorrect)
+                        .Select(a => a.Text)
+                        .ToList(),
+
+                    IsCorrect = ua.Question.Type == QuestionType.FillInTheBlank
+                        ? string.Equals(
+                            ua.FreeTextAnswer?.Trim(),
+                            ua.Question.Answers.FirstOrDefault(a => a.IsCorrect)?.Text.Trim(),
+                            StringComparison.OrdinalIgnoreCase)
+                        : ua.Question.Answers
+                            .Where(a => a.IsCorrect).Select(a => a.Id).OrderBy(id => id)
+                            .SequenceEqual(ua.SelectedAnswerIds.OrderBy(id => id))
+                }).ToList(),
+
+                Attempts = attempts,
+                AttemptCount = attempts.Count
+            };
+
+            return dto;
+        }
+
     }
 }

@@ -123,5 +123,38 @@ namespace VebQuiz.Controllers
             }
         }
 
+        [HttpGet("filter")]
+        [Authorize] // ili [AllowAnonymous] ako želiš da svako vidi kvizove
+        public async Task<IActionResult> FilterQuizzes([FromQuery] string? category, [FromQuery] string? difficulty, [FromQuery] string? search)
+        {
+            var result = await _quizService.FilterQuizzesAsync(category, difficulty, search);
+            return Ok(result);
+        }
+
+        [HttpGet("leaderboard")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetLeaderboard([FromQuery] int? quizId, [FromQuery] string? period)
+        {
+            var leaderboard = await _quizService.GetLeaderboardAsync(quizId, period);
+            return Ok(leaderboard);
+        }
+
+
+
+        [HttpGet("{id}/details")]
+        [Authorize(Roles = "user")]
+        public async Task<IActionResult> GetQuizResultDetails(int id)
+        {
+            var username = User.Identity?.Name;
+            if (username == null)
+                return Unauthorized();
+
+            var result = await _quizService.GetUserQuizResultAsync(id, username);
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
     }
 }

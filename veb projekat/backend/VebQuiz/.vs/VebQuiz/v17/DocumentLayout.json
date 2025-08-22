@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\services\\quizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\services\\quizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\interface\\iquizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\interface\\iquizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +23,20 @@
       "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\services\\quizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\services\\quizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\controllers\\resultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\controllers\\resultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\dto\\quizresultdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\dto\\quizresultdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\dto\\quizuserresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\dto\\quizuserresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\dto\\leaderboardentrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\dto\\leaderboardentrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\dto\\quizresultforadmindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,10 +75,6 @@
       "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\dto\\quizdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -85,10 +101,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\controllers\\resultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|solutionrelative:vebquiz\\controllers\\resultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C375FA84-0FD6-44FE-9730-CA96859FF606}|VebQuiz\\VebQuiz.csproj|c:\\users\\glisi\\onedrive\\desktop\\git\\veb-projekat\\veb projekat\\backend\\vebquiz\\vebquiz\\model\\quizuseranswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -158,41 +170,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IQuizService.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Interface\\IQuizService.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Interface\\IQuizService.cs",
               "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Interface\\IQuizService.cs",
               "RelativeToolTip": "VebQuiz\\Interface\\IQuizService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-17T17:57:09.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Interface\\IUserService.cs",
+              "RelativeDocumentMoniker": "VebQuiz\\Interface\\IUserService.cs",
+              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Interface\\IUserService.cs",
+              "RelativeToolTip": "VebQuiz\\Interface\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T17:57:19.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "QuizService.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Services\\QuizService.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Services\\QuizService.cs",
               "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Services\\QuizService.cs",
               "RelativeToolTip": "VebQuiz\\Services\\QuizService.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAADwv5cAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAcwJQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-17T17:56:45.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QuizController.cs",
-              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\QuizController.cs",
-              "RelativeDocumentMoniker": "VebQuiz\\Controllers\\QuizController.cs",
-              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\QuizController.cs",
-              "RelativeToolTip": "VebQuiz\\Controllers\\QuizController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAUwHsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T17:57:59.13Z",
               "EditorCaption": ""
             },
             {
@@ -211,6 +223,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "QuizController.cs",
+              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\QuizController.cs",
+              "RelativeDocumentMoniker": "VebQuiz\\Controllers\\QuizController.cs",
+              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\QuizController.cs",
+              "RelativeToolTip": "VebQuiz\\Controllers\\QuizController.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAgwJwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T17:57:59.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ResultController.cs",
+              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\ResultController.cs",
+              "RelativeDocumentMoniker": "VebQuiz\\Controllers\\ResultController.cs",
+              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\ResultController.cs",
+              "RelativeToolTip": "VebQuiz\\Controllers\\ResultController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T17:58:13.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QuizResultDetailsDto.cs",
+              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizResultDetailsDto.cs",
+              "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizResultDetailsDto.cs",
+              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizResultDetailsDto.cs",
+              "RelativeToolTip": "VebQuiz\\DTO\\QuizResultDetailsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T19:09:36.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "QuizUserResultDTO.cs",
+              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizUserResultDTO.cs",
+              "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizUserResultDTO.cs",
+              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizUserResultDTO.cs",
+              "RelativeToolTip": "VebQuiz\\DTO\\QuizUserResultDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T19:09:13.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LeaderboardEntryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\LeaderboardEntryDTO.cs",
+              "RelativeDocumentMoniker": "VebQuiz\\DTO\\LeaderboardEntryDTO.cs",
+              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\LeaderboardEntryDTO.cs",
+              "RelativeToolTip": "VebQuiz\\DTO\\LeaderboardEntryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T19:08:48.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "QuizResultForAdminDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizResultForAdminDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizResultForAdminDTO.cs",
@@ -218,12 +295,11 @@
               "RelativeToolTip": "VebQuiz\\DTO\\QuizResultForAdminDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T10:00:23.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T10:00:23.712Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "UpdateQuizDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\UpdateQuizDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\UpdateQuizDTO.cs",
@@ -231,12 +307,11 @@
               "RelativeToolTip": "VebQuiz\\DTO\\UpdateQuizDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T09:59:18.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T09:59:18.728Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "QuizResultDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizResultDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizResultDTO.cs",
@@ -248,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "QuizDetailDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizDetailDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizDetailDTO.cs",
@@ -260,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "QuizSolveDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizSolveDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizSolveDTO.cs",
@@ -272,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "QuizPreviewDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizPreviewDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizPreviewDTO.cs",
@@ -284,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "AnswerDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\AnswerDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\AnswerDTO.cs",
@@ -296,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "QuestionDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuestionDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuestionDTO.cs",
@@ -308,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "QuizDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\QuizDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\QuizDTO.cs",
@@ -320,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Services\\UserService.cs",
@@ -332,19 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Interface\\IUserService.cs",
-              "RelativeDocumentMoniker": "VebQuiz\\Interface\\IUserService.cs",
-              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Interface\\IUserService.cs",
-              "RelativeToolTip": "VebQuiz\\Interface\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T17:57:19.072Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Configurations\\MappingProfile.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Configurations\\MappingProfile.cs",
@@ -356,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Configurations\\AppDbContext.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Configurations\\AppDbContext.cs",
@@ -368,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Controllers\\UserController.cs",
@@ -380,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\LoginDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\LoginDTO.cs",
@@ -392,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\appsettings.json",
               "RelativeDocumentMoniker": "VebQuiz\\appsettings.json",
@@ -404,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "RegisterDTO.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\DTO\\RegisterDTO.cs",
               "RelativeDocumentMoniker": "VebQuiz\\DTO\\RegisterDTO.cs",
@@ -416,19 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ResultController.cs",
-              "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\ResultController.cs",
-              "RelativeDocumentMoniker": "VebQuiz\\Controllers\\ResultController.cs",
-              "ToolTip": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Controllers\\ResultController.cs",
-              "RelativeToolTip": "VebQuiz\\Controllers\\ResultController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T17:58:13.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "QuizUserAnswer.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Model\\QuizUserAnswer.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Model\\QuizUserAnswer.cs",
@@ -440,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "QuizResult.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Model\\QuizResult.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Model\\QuizResult.cs",
@@ -452,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "Answer.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Model\\Answer.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Model\\Answer.cs",
@@ -464,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Model\\Question.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Model\\Question.cs",
@@ -476,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Quiz.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Model\\Quiz.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Model\\Quiz.cs",
@@ -488,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\Model\\User.cs",
               "RelativeDocumentMoniker": "VebQuiz\\Model\\User.cs",
@@ -500,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "VebQuiz.csproj",
               "DocumentMoniker": "C:\\Users\\glisi\\OneDrive\\Desktop\\git\\Veb-projekat\\veb projekat\\backend\\VebQuiz\\VebQuiz\\VebQuiz.csproj",
               "RelativeDocumentMoniker": "VebQuiz\\VebQuiz.csproj",

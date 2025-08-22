@@ -18,6 +18,12 @@ namespace VebQuiz.Interface
         Task UpdateQuizQuestionsAsync(int id, QuizDTO dto);
 
         Task DeleteQuestionAsync(int questionId);
+        Task<List<QuizDTO>> FilterQuizzesAsync(string? category, string? difficulty, string? search);
+
+        Task<List<LeaderboardEntryDTO>> GetLeaderboardAsync(int? quizId, string? period);
+        Task<QuizResultDetailsDto?> GetUserQuizResultAsync(int quizResultId, string username);// ovaj radi
+
+        Task<List<QuizUserResultDTO>> GetUserResultsAsync(string username);
 
     }
 }
