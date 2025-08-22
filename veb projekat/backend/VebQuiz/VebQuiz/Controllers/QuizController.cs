@@ -53,5 +53,75 @@ namespace VebQuiz.Controllers
             var result = await _quizService.SolveQuizAsync(id, dto, username);
             return Ok(result);
         }
+
+
+        [HttpGet("{id}/results")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> GetResultsForQuiz(int id)
+        {
+            var results = await _quizService.GetResultsByQuizIdAsync(id);
+            return Ok(results);
+            // za admina rezultati
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _quizService.DeleteQuizAsync(id);
+                return Ok("Kviz je uspešno obrisan.");
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+
+        [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateQuizDTO dto)
+        {
+            try
+            {
+                await _quizService.UpdateQuizAsync(id, dto);
+                return Ok("Kviz je uspešno izmenjen.");
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [HttpPut("{id}/questions")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> UpdateQuestions(int id, [FromBody] QuizDTO dto)
+        {
+            try
+            {
+                await _quizService.UpdateQuizQuestionsAsync(id, dto);
+                return Ok("Pitanja i odgovori su uspešno izmenjeni.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpDelete("/api/question/{questionId}")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> DeleteQuestion(int questionId)
+        {
+            try
+            {
+                await _quizService.DeleteQuestionAsync(questionId);
+                return Ok("Pitanje je uspešno obrisano.");
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
     }
 }

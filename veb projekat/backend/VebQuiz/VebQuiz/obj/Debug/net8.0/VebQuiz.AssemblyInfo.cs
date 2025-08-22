@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VebQuiz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+081472add3ba19d4bbf3bbaf2d349a248bff770d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a9385cbb8c54f45597d8adc9dca976bbba61d69")]
 [assembly: System.Reflection.AssemblyProductAttribute("VebQuiz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VebQuiz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
